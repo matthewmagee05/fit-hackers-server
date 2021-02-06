@@ -18,24 +18,6 @@ model User {
   username  String   @unique
 }
 
-model Platform {
-  createdAt  DateTime     @default(now())
-  id         String       @id @default(cuid())
-  name       String?
-  updatedAt  DateTime     @updatedAt
-  Instructor Instructor[]
-  Class      Class[]
-}
-
-model WorkoutType {
-  createdAt             DateTime                @default(now())
-  id                    String                  @id @default(cuid())
-  name                  String
-  updatedAt             DateTime                @updatedAt
-  InstructorWorkoutType InstructorWorkoutType[]
-  Class                 Class[]
-}
-
 model Instructor {
   about                 String?
   createdAt             DateTime                @default(now())
@@ -72,4 +54,25 @@ model Class {
   instructorId  String?
   platformId    String
   workoutTypeId String
+}
+
+model WorkoutType {
+  createdAt             DateTime                @default(now())
+  iconUrl               String?
+  id                    String                  @id @default(cuid())
+  name                  String
+  updatedAt             DateTime                @updatedAt
+  InstructorWorkoutType InstructorWorkoutType[]
+  Class                 Class[]
+}
+
+model Platform {
+  color      String?
+  createdAt  DateTime     @default(now())
+  iconUrl    String?
+  id         String       @id @default(cuid())
+  name       String?
+  updatedAt  DateTime     @updatedAt
+  Instructor Instructor[]
+  Class      Class[]
 }

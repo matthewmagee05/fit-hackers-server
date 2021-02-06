@@ -57,6 +57,12 @@ export const CreatePlatform = (): React.ReactElement => {
           }
         >
           <div>
+            <TextField label="color" name="color" />
+          </div>
+          <div>
+            <TextField label="icon_url" name="iconUrl" />
+          </div>
+          <div>
             <TextField label="name" name="name" />
           </div>
         </Form>

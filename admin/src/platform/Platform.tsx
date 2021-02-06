@@ -70,7 +70,10 @@ export const Platform = (): React.ReactElement => {
   const errorMessage =
     updateError?.response?.data?.message || error?.response?.data?.message;
 
-  const initialValues = React.useMemo(() => pick(data, ["name"]), [data]);
+  const initialValues = React.useMemo(
+    () => pick(data, ["color", "iconUrl", "name"]),
+    [data]
+  );
 
   if (isLoading) {
     return <span>Loading...</span>;
@@ -103,6 +106,12 @@ export const Platform = (): React.ReactElement => {
               </FormHeader>
             }
           >
+            <div>
+              <TextField label="color" name="color" />
+            </div>
+            <div>
+              <TextField label="icon_url" name="iconUrl" />
+            </div>
             <div>
               <TextField label="name" name="name" />
             </div>

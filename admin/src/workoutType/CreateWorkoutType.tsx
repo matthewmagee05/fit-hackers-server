@@ -57,6 +57,9 @@ export const CreateWorkoutType = (): React.ReactElement => {
           }
         >
           <div>
+            <TextField label="icon_url" name="iconUrl" />
+          </div>
+          <div>
             <TextField label="name" name="name" />
           </div>
         </Form>

@@ -1,6 +1,6 @@
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsString } from "class-validator";
+import { IsDate, IsString, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 @ObjectType()
 class WorkoutType {
@@ -11,6 +11,16 @@ class WorkoutType {
   @Type(() => Date)
   @Field(() => Date)
   createdAt!: Date;
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  iconUrl!: string | null;
   @ApiProperty({
     required: true,
     type: String,

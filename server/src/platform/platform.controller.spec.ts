@@ -11,27 +11,35 @@ import { PlatformService } from "./platform.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  color: "exampleColor",
   createdAt: new Date(),
+  iconUrl: "exampleIconUrl",
   id: "exampleId",
   name: "exampleName",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
+  color: "exampleColor",
   createdAt: new Date(),
+  iconUrl: "exampleIconUrl",
   id: "exampleId",
   name: "exampleName",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
+    color: "exampleColor",
     createdAt: new Date(),
+    iconUrl: "exampleIconUrl",
     id: "exampleId",
     name: "exampleName",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
+  color: "exampleColor",
   createdAt: new Date(),
+  iconUrl: "exampleIconUrl",
   id: "exampleId",
   name: "exampleName",
   updatedAt: new Date(),

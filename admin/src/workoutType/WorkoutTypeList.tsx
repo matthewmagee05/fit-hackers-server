@@ -37,6 +37,11 @@ const FIELDS: DataField[] = [
     sortable: false,
   },
   {
+    name: "iconUrl",
+    title: "icon_url",
+    sortable: false,
+  },
+  {
     name: "name",
     title: "name",
     sortable: false,
@@ -85,6 +90,9 @@ export const WorkoutTypeList = (): React.ReactElement => {
                 </DataGridCell>
                 <DataGridCell>
                   <TimeSince time={item.createdAt} />
+                </DataGridCell>
+                <DataGridCell>
+                  <>{item.iconUrl}</>
                 </DataGridCell>
                 <DataGridCell>
                   <>{item.name}</>

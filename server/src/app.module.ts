@@ -1,10 +1,10 @@
 import { Module } from "@nestjs/common";
 import { UserModule } from "./user/user.module";
-import { PlatformModule } from "./platform/platform.module";
-import { WorkoutTypeModule } from "./workoutType/workoutType.module";
 import { InstructorModule } from "./instructor/instructor.module";
 import { InstructorWorkoutTypeModule } from "./instructorWorkoutType/instructorWorkoutType.module";
 import { ClassModule } from "./class/class.module";
+import { WorkoutTypeModule } from "./workoutType/workoutType.module";
+import { PlatformModule } from "./platform/platform.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { MorganModule } from "nest-morgan";
@@ -17,11 +17,11 @@ import { GraphQLModule } from "@nestjs/graphql";
   controllers: [],
   imports: [
     UserModule,
-    PlatformModule,
-    WorkoutTypeModule,
     InstructorModule,
     InstructorWorkoutTypeModule,
     ClassModule,
+    WorkoutTypeModule,
+    PlatformModule,
     ACLModule,
     AuthModule,
     MorganModule,

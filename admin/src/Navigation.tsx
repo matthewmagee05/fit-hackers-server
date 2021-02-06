@@ -6,14 +6,14 @@ const Navigation = (): React.ReactElement => {
   return (
     <>
       <NavigationItem name="Users" to="/users" />
-      <NavigationItem name="platforms" to="/platforms" />
-      <NavigationItem name="workout_types" to="/workout-types" />
       <NavigationItem name="instructors" to="/instructors" />
       <NavigationItem
         name="instructor_workout_types"
         to="/instructor-workout-types"
       />
       <NavigationItem name="classes" to="/classes" />
+      <NavigationItem name="workout_types" to="/workout-types" />
+      <NavigationItem name="platforms" to="/platforms" />
     </>
   );
 };

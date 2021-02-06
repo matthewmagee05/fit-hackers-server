@@ -62,6 +62,7 @@ export class WorkoutTypeController {
       data: data,
       select: {
         createdAt: true,
+        iconUrl: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -93,6 +94,7 @@ export class WorkoutTypeController {
       where: query,
       select: {
         createdAt: true,
+        iconUrl: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -128,6 +130,7 @@ export class WorkoutTypeController {
       where: params,
       select: {
         createdAt: true,
+        iconUrl: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -185,6 +188,7 @@ export class WorkoutTypeController {
         data: data,
         select: {
           createdAt: true,
+          iconUrl: true,
           id: true,
           name: true,
           updatedAt: true,
@@ -221,6 +225,7 @@ export class WorkoutTypeController {
         where: params,
         select: {
           createdAt: true,
+          iconUrl: true,
           id: true,
           name: true,
           updatedAt: true,
