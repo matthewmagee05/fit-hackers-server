@@ -1,3 +1,10 @@
+<div class="container">
+  <h4>Today's Classes</h4>
+  <mat-chip-list aria-label="Platform selection">
+    <mat-chip *ngFor="let platform of classTypes" [ngStyle]="{'background-color': platform.color, 'color': 'white'}">{{platform.name}}</mat-chip>
+  </mat-chip-list>
+  <a>View Full Calendar -></a>
+</div>
 <div *ngIf="events$ | async;  let events">
 <mwl-calendar-week-view
 class="cal-day-view"

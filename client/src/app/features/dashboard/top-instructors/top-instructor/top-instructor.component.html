@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar [ngStyle]="{'background-image': instructor.imageUrl !== null ? '`url(${instructor.imageUrl})`': 'url(../../../../../assets/img/default_profile.png)'}" class="example-header-image"></div>
+    <mat-card-title>{{instructor.name}}</mat-card-title>
+    <mat-card-subtitle>{{instructor.about}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

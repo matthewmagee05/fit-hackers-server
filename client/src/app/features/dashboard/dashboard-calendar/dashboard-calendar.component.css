@@ -1,0 +1,26 @@
+h4 {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+a {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+mat-chip {
+  font-size: 10px;
+}
+
+mat-chip-list {
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+.container a:last-child {
+  margin-left: auto;
+}

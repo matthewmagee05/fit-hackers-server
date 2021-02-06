@@ -41,7 +41,8 @@ export class DashboardCalendarComponent implements OnInit {
   events$: Observable<CalendarEvent[]>;
   viewDate = moment();
   dayStartHour = this.viewDate.hours();
-  dayEndHour = this.viewDate.hours() + 2;
+  dayEndHour = this.viewDate.hours() + 3;
+  classTypes = new Set();
   constructor(private calendarService: DashboardCalendarService) {}
 
   ngOnInit(): void {
@@ -52,6 +53,7 @@ export class DashboardCalendarComponent implements OnInit {
     this.events$ = this.calendarService.getClasses().pipe(
       map((results: WorkoutClass[]) => {
         return results.map((workoutClass: WorkoutClass) => {
+          this.classTypes.add(workoutClass.platform);
           return {
             title: `${workoutClass.platform.name} - ${moment(
               moment(workoutClass.time).utc().format('YYYY-MM-DD HH:mm:ss')
@@ -67,7 +69,7 @@ export class DashboardCalendarComponent implements OnInit {
               moment(workoutClass.time).utc().format('YYYY-MM-DD HH:mm:ss')
             ).toDate(),
             color: {
-              primary: this.invertColor(workoutClass.platform.color),
+              primary: workoutClass.platform.color,
               secondary: workoutClass.platform.color,
             },
             allDay: false,
@@ -79,35 +81,5 @@ export class DashboardCalendarComponent implements OnInit {
         });
       })
     );
-  }
-
-  invertColor(col) {
-    const colors = [
-      '0',
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      'a',
-      'b',
-      'c',
-      'd',
-      'e',
-      'f',
-    ];
-    let inverseColor = '#';
-    col
-      .replace('#', '')
-      .split('')
-      .forEach((i) => {
-        const index = colors.indexOf(i);
-        inverseColor += colors.reverse()[index];
-      });
-    return inverseColor;
   }
 }
