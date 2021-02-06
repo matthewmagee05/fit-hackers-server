@@ -32,8 +32,18 @@ const FIELDS: DataField[] = [
     sortable: false,
   },
   {
+    name: "color",
+    title: "color",
+    sortable: false,
+  },
+  {
     name: "createdAt",
     title: "Created At",
+    sortable: false,
+  },
+  {
+    name: "iconUrl",
+    title: "icon_url",
     sortable: false,
   },
   {
@@ -81,7 +91,13 @@ export const PlatformList = (): React.ReactElement => {
                   </Link>
                 </DataGridCell>
                 <DataGridCell>
+                  <>{item.color}</>
+                </DataGridCell>
+                <DataGridCell>
                   <TimeSince time={item.createdAt} />
+                </DataGridCell>
+                <DataGridCell>
+                  <>{item.iconUrl}</>
                 </DataGridCell>
                 <DataGridCell>
                   <>{item.name}</>

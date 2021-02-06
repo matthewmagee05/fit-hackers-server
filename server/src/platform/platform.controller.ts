@@ -61,7 +61,9 @@ export class PlatformController {
       ...query,
       data: data,
       select: {
+        color: true,
         createdAt: true,
+        iconUrl: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -92,7 +94,9 @@ export class PlatformController {
     const results = await this.service.findMany({
       where: query,
       select: {
+        color: true,
         createdAt: true,
+        iconUrl: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -127,7 +131,9 @@ export class PlatformController {
       ...query,
       where: params,
       select: {
+        color: true,
         createdAt: true,
+        iconUrl: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -184,7 +190,9 @@ export class PlatformController {
         where: params,
         data: data,
         select: {
+          color: true,
           createdAt: true,
+          iconUrl: true,
           id: true,
           name: true,
           updatedAt: true,
@@ -220,7 +228,9 @@ export class PlatformController {
         ...query,
         where: params,
         select: {
+          color: true,
           createdAt: true,
+          iconUrl: true,
           id: true,
           name: true,
           updatedAt: true,

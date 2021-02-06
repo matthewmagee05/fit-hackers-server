@@ -15,11 +15,11 @@ import BreadcrumbsProvider from "./components/breadcrumbs/BreadcrumbsProvider";
 import useBreadcrumbs from "./components/breadcrumbs/use-breadcrumbs";
 import PrivateRoute from "./components/PrivateRoute";
 import { UserIndex } from "./user/UserIndex";
-import { PlatformIndex } from "./platform/PlatformIndex";
-import { WorkoutTypeIndex } from "./workoutType/WorkoutTypeIndex";
 import { InstructorIndex } from "./instructor/InstructorIndex";
 import { InstructorWorkoutTypeIndex } from "./instructorWorkoutType/InstructorWorkoutTypeIndex";
 import { ClassIndex } from "./class/ClassIndex";
+import { WorkoutTypeIndex } from "./workoutType/WorkoutTypeIndex";
+import { PlatformIndex } from "./platform/PlatformIndex";
 
 const App = (): React.ReactElement => {
   const history = useHistory();
@@ -89,14 +89,14 @@ const AppLayout = (): React.ReactElement => {
           <Switch>
             <PrivateRoute exact path="/" component={Navigation} />
             <PrivateRoute path="/users" component={UserIndex} />
-            <PrivateRoute path="/platforms" component={PlatformIndex} />
-            <PrivateRoute path="/workout-types" component={WorkoutTypeIndex} />
             <PrivateRoute path="/instructors" component={InstructorIndex} />
             <PrivateRoute
               path="/instructor-workout-types"
               component={InstructorWorkoutTypeIndex}
             />
             <PrivateRoute path="/classes" component={ClassIndex} />
+            <PrivateRoute path="/workout-types" component={WorkoutTypeIndex} />
+            <PrivateRoute path="/platforms" component={PlatformIndex} />
           </Switch>
         </Page>
       </MainLayout.Content>
