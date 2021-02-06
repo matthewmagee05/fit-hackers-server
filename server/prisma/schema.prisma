@@ -1,0 +1,75 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("POSTGRESQL_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime @default(now())
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     String[]
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model Platform {
+  createdAt  DateTime     @default(now())
+  id         String       @id @default(cuid())
+  name       String?
+  updatedAt  DateTime     @updatedAt
+  Instructor Instructor[]
+  Class      Class[]
+}
+
+model WorkoutType {
+  createdAt             DateTime                @default(now())
+  id                    String                  @id @default(cuid())
+  name                  String
+  updatedAt             DateTime                @updatedAt
+  InstructorWorkoutType InstructorWorkoutType[]
+  Class                 Class[]
+}
+
+model Instructor {
+  about                 String?
+  createdAt             DateTime                @default(now())
+  id                    String                  @id @default(cuid())
+  imageUrl              String?
+  likes                 Int
+  name                  String
+  platform              Platform                @relation(fields: [platformId], references: [id])
+  updatedAt             DateTime                @updatedAt
+  InstructorWorkoutType InstructorWorkoutType[]
+  Class                 Class[]
+  platformId            String
+}
+
+model InstructorWorkoutType {
+  createdAt     DateTime     @default(now())
+  id            String       @id @default(cuid())
+  instructor    Instructor   @relation(fields: [instructorId], references: [id])
+  updatedAt     DateTime     @updatedAt
+  workoutType   WorkoutType? @relation(fields: [workoutTypeId], references: [id])
+  instructorId  String
+  workoutTypeId String?
+}
+
+model Class {
+  createdAt     DateTime    @default(now())
+  description   String?
+  id            String      @id @default(cuid())
+  instructor    Instructor? @relation(fields: [instructorId], references: [id])
+  platform      Platform    @relation(fields: [platformId], references: [id])
+  time          DateTime
+  updatedAt     DateTime    @updatedAt
+  workoutType   WorkoutType @relation(fields: [workoutTypeId], references: [id])
+  instructorId  String?
+  platformId    String
+  workoutTypeId String
+}
