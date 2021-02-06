@@ -135,12 +135,15 @@ export class ClassController {
         instructor: {
           select: {
             id: true,
+            name: true
           },
         },
 
         platform: {
           select: {
             id: true,
+            name: true,
+            color: true
           },
         },
 
@@ -150,6 +153,7 @@ export class ClassController {
         workoutType: {
           select: {
             id: true,
+            name: true
           },
         },
       },

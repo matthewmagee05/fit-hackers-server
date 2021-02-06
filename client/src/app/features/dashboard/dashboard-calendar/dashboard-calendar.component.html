@@ -1,0 +1,10 @@
+<div *ngIf="events$ | async;  let events">
+<mwl-calendar-week-view
+class="cal-day-view"
+[daysInWeek]="1"
+[viewDate]="viewDate"
+[dayStartHour]="dayStartHour"
+[dayEndHour]="dayEndHour"
+[events]="events "
+></mwl-calendar-week-view>
+</div>
